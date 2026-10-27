@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#eaf3ff">
+    <title>Weather Now</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="weather-app">
+        <header class="page-header">
+            <a class="brand" href="#" aria-label="Weather Now home">
+                <span class="brand-icon" aria-hidden="true">☀</span>
+                <span>Weather<span class="brand-light">Now</span></span>
+            </a>
+            <p class="header-note">Your local forecast, at a glance</p>
+        </header>
+
+        <section class="search-section" aria-labelledby="page-title">
+            <p class="eyebrow">WEATHER REPORT</p>
+            <h1 id="page-title">How's the weather?</h1>
+            <p class="intro">Search for a city to see its current weather.</p>
+
+            <form id="search-form" class="search-form">
+                <label class="visually-hidden" for="city-input">City name</label>
+                <span class="search-icon" aria-hidden="true">⌕</span>
+                <input
+                    id="city-input"
+                    name="city"
+                    type="search"
+                    placeholder="Enter a city, e.g. Kakkanad"
+                    autocomplete="off"
+                    required
+                >
+                <button id="search-button" type="submit">Search</button>
+            </form>
+
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section id="weather-card" class="weather-card" aria-label="Current weather" hidden>
+            <div class="weather-heading">
+                <div>
+                    <p class="eyebrow">CURRENT WEATHER</p>
+                    <h2 id="city-name"></h2>
+                    <p id="weather-date" class="weather-date"></p>
+                </div>
+                <div class="condition">
+                    <img id="weather-icon" src="" alt="">
+                    <p id="weather-description"></p>
+                </div>
+            </div>
+
+            <div class="temperature-row">
+                <p id="temperature" class="temperature"></p>
+                <p id="feels-like" class="feels-like"></p>
+            </div>
+
+            <div class="details-grid">
+                <article class="detail">
+                    <span class="detail-icon" aria-hidden="true">💧</span>
+                    <div>
+                        <p class="detail-label">Humidity</p>
+                        <p id="humidity" class="detail-value"></p>
+                    </div>
+                </article>
+                <article class="detail">
+                    <span class="detail-icon" aria-hidden="true">🌬</span>
+                    <div>
+                        <p class="detail-label">Wind speed</p>
+                        <p id="wind-speed" class="detail-value"></p>
+                    </div>
+                </article>
+                <article class="detail">
+                    <span class="detail-icon" aria-hidden="true">◉</span>
+                    <div>
+                        <p class="detail-label">Pressure</p>
+                        <p id="pressure" class="detail-value"></p>
+                    </div>
+                </article>
+                <article class="detail">
+                    <span class="detail-icon" aria-hidden="true">↗</span>
+                    <div>
+                        <p class="detail-label">Visibility</p>
+                        <p id="visibility" class="detail-value"></p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            <p>Weather data provided by OpenWeather</p>
+        </footer>
+    </main>
+</body>
+</html>
